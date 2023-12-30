@@ -1,0 +1,8 @@
+*** Poor security practice 1 ***
+An IAM role with full access to s3 objects.
+This role should only have access to specific buckets and allow only necessary actions. Allowing full access would expose a vulnarability to change content in any S3 bucket of AWS account
+
+*** Poor security practice 2 ***
+
+S3 buckets have no server-side encryption enabled and the feature Block Public Access for buckets are disabled. 
+Not encrypting the contents of the s3 buckets could allow people who shouldn't have access to the objects to view the objects in the buckets.

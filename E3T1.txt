@@ -1,0 +1,16 @@
+I've been waiting for more than an hour but no Findings on  GuardDuty even though the attack had been succeeded (please refer E3T1_guardduty_attack_succeed.png). 
+I went through https://knowledge.udacity.com/questions/987733 and changed "Frequency for updated findings to 15 minutes" but the issue still remains.
+According to the answer from mentor, this is an common known issue. So I followed he/she guideline, submiting it and noted down a explaination for reviewer.
+
+**** I would try with a guess ****
+1. What findings were detected related to the brute force attack?
+GuardDuty may show an UnauthorizedAccess brute force for the EC2 instant.
+
+3. Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information?
+According to the AWS documentation  
+"Amazon GuardDuty is a security monitoring service that analyzes and processes Foundational data sources, such as AWS CloudTrail management events, AWS CloudTrail event logs, VPC flow logs (from Amazon EC2 instances), and DNS logs"
+
+The details for this attack could be found in the VPC flow logs.
+The logs will show requests being sent from the one instance to a specific IP indicating that the instance is being used for an SSH brute force attack.
+
+Thank you!

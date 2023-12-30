@@ -1,0 +1,14 @@
+1. Identify tools that will allow you to do the following: 
+a. Scan infrastructure as code templates
+  CFRipper: https://github.com/Skyscanner/cfripper
+
+b. Scan AMI’s or containers for OS vulnerabilities. 
+  Clair: https://github.com/quay/clair
+
+c. Scan an AWS environment for cloud configuration vulnerabilities.
+  AWS Config: https://aws.amazon.com/config/
+  
+2. For each tool - identify an example compliance violation or vulnerability that it might expose.
+CFRipper: S3BucketPolicyPrincipalRule (Checks for non-allowed principals in S3 bucket policies).
+Clair: Old libraries and images can have many bugs and security vulnerabilities (refer CVE: https://cve.mitre.org/).
+AWS Config: s3-bucket-public-write-prohibited (Checks if your Amazon S3 buckets do not allow public write access. The rule checks the Block Public Access settings, the bucket policy, and the bucket access control list).
